@@ -11,6 +11,11 @@ router.get("/", async(req, res)=>{
     let Plants= await Plant.find();
     res.render("pages/plantation.ejs", {Plants, success: req.flash('success'), error: req.flash('error') });
 });
+router.get('/new', (req, res)=>{
+    
+        res.render('pages/newPlant.ejs');
+    
+});
 router.get("/:id", async(req, res)=>{
     let {id}= req.params;
     let plant=await Plant.findById(id);
@@ -62,10 +67,6 @@ router.post('/', upload.single('Plant[image]'), async(req, res)=>{
   req.flash('success', `${req.body.Plant.name} Plant added`);
   res.redirect('/plant');}
 });
-router.get('/new', (req, res)=>{
-    
-        res.render('pages/newPlant.ejs');
-    
-});
+
 
 module.exports= router;
