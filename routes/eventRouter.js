@@ -20,7 +20,7 @@ router.post('/new',async (req, res)=>{
     let {event}= req.body;
     let new_event= new Event(event);
     await new_event.save();
-    req.flash('success', "New event added successfully");
+    req.flash('success', "New Event added ");
     res.redirect('/events');
   }
 });

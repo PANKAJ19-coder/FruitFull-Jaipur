@@ -26,6 +26,7 @@ router.patch('/:id/edit', upload.single(`Plant[image]`), async (req, res)=>{
     let result= plantValidation.validate(req.body);
     let plant= await Plant.findById(id);
     let {image:previous_image}= plant.image;
+    let{name}= plant.name;
     if(result.error){
     throw new expressError(400, result.error)
   }else{
@@ -36,7 +37,7 @@ router.patch('/:id/edit', upload.single(`Plant[image]`), async (req, res)=>{
     req.body.Plant.image= previous_image;
   }
   await Plant.findByIdAndUpdate(id, req.body.Plant);
-  req.flash('success', 'Plant edited successfully');
+  req.flash('success', `${name} edited`);
   res.redirect('/plant');
 }
 });
@@ -44,7 +45,7 @@ router.delete('/:id/delete', async(req, res)=>{
     let {id}= req.params;
     let plantToBeDeleted= await Plant .findById(id);
     let name= plantToBeDeleted.name;
-    req.flash('success', `${name} plant deleted`);
+    req.flash('success', `${name} deleted`);
     await Plant.findByIdAndDelete(id);
     res.redirect('/plant');
 });
@@ -58,7 +59,7 @@ router.post('/', upload.single('Plant[image]'), async(req, res)=>{
   const new_plant= new Plant(req.body.Plant);
   new_plant.image= {url:path, filename:filename};
   await new_plant.save();
-  req.flash('success', "New Plant added");
+  req.flash('success', `${req.body.Plant.name} Plant added`);
   res.redirect('/plant');}
 });
 router.get('/new', (req, res)=>{
