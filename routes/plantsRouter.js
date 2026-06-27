@@ -11,7 +11,7 @@ router.get("/", async(req, res)=>{
     let Plants= await Plant.find();
     res.render("pages/plantation.ejs", {Plants, success: req.flash('success'), error: req.flash('error') });
 });
-router.get("/plant/:id", async(req, res)=>{
+router.get("/:id", async(req, res)=>{
     let {id}= req.params;
     let plant=await Plant.findById(id);
     res.render("pages/plantDetail.ejs",{plant})
