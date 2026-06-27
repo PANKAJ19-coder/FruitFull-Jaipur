@@ -2,7 +2,7 @@ const express= require('express');
 const router= express.Router();
 
 const Event= require('../Models/Event.js');
-const eventValidation =require('../Eventvalidation.js');
+const eventValidation =require('../EventValidation.js');
 
 
 router.get("/", async(req, res)=>{
