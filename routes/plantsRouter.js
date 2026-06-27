@@ -31,7 +31,7 @@ router.patch('/:id/edit', upload.single(`Plant[image]`), async (req, res)=>{
     let result= plantValidation.validate(req.body);
     let plant= await Plant.findById(id);
     let {image:previous_image}= plant.image;
-    let{name:plantName}= plant.name;
+    let plantName= plant.name;
     if(result.error){
     throw new expressError(400, result.error)
   }else{
