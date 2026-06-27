@@ -1,0 +1,84 @@
+<% layout("layouts/boilerplate.ejs")%>
+<body>
+  <%-include('../pages/flash.ejs') %>
+  <div class="upcoming">
+    <h3>Upcoming Events</h3>
+    <div class="list">
+      <div class="row ">
+        <% if(events.length==0){%>
+          <h5>No upcoming event</h5>
+          <%} else{%>
+      <% for(event of events){ %>
+        
+          <div class="col-12  mb-4  ">
+      <div class="card  mx-auto  text-start">
+  <div class="card-body">
+    <h5 class="card-title"> <%= event.title%></h5>
+   
+    <p class="card-text"><%= event.detail%></p>
+    <p class="card-text"></p>
+    <p>For more info write to:&nbsp;ffj@jecrc.ac.in</p>
+    <% if(currUser){%>
+    <form method='POST', action="/events/<%=event._id %>/delete?_method=DELETE">
+      <button class="btn btn-primary " type="submit">Delete event</button>
+     </form>
+    <% } %>
+  </div>
+  
+  </div>
+  </div>
+
+    <% }%><% }%></div>
+    
+    </div> <br>
+    <% if(currUser){%>
+    <a href="/events/new" class="btn btn-primary btn">Add upcoming event</a>
+    <% } %>
+    
+  </div><hr>
+    <div class="events">
+      <h3>Past Events</h3>
+      <p class="disc"> Fruitfull Jaipur holds various small and big events throught the year. Every event is aimed at raising awarness about environmental issues and promote sustainability by adopting eco-friendly practises. </p>
+        <div class="cards">
+            <div class="card shadow-sm event">
+                <img src="pictures/World env. day 2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">World Environment Day</h5>
+                  <h6 class="card-title">(2024)</h6>
+                  <p class="card-text"> The World Environment Day was clebrated on 5th of June, 2024. at JECRC Foundation was a significant event aimed at raising awarness about environmental conservation. The celebration includede a variety of activities such as tree planting, waste segregation campaigns, and workshop on sustainability. </p>
+                  
+                </div>
+            </div>
+            <div class="card  shadow-sm event">
+                <img src="pictures/Pot Painting 2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Pot Painting Competition</h5>
+                  <h6 class="card-title">(2023)</h6>
+                  <p class="card-text">In celebration of World Environment Day on 5th June 2023, an offline event was conducted featuring a Pot Painting Competition and Bird House Distribution.</p>
+                 
+                </div>
+            </div>
+            <div class="card  shadow-sm event">
+                <img src="pictures/Ecofiesta.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Ecofiesta</h5>
+                  <h6 class="card-title">(2025)</h6>
+                  <p class="card-text">This event was celebrated on the occasion of 'World Conservation Day', where participants pitched their innovative ideas to solve real world problems.</p>
+                  
+                </div>
+            </div>
+            <div class="card  shadow-sm event">
+                <img src="pictures/Plant app.day.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Plant Appreciation Day</h5>
+                  <h6 class="card-title">(2024)</h6>
+                  <p class="card-text">International Plant Appreciation day was celebrated on Aprail 13, 2024. </p>
+                 
+                </div>
+            </div>
+            
+            
+        </div>
+
+    </div>
+</body>

@@ -1,0 +1,75 @@
+<% -layout('layouts/boilerplate.ejs')%>
+
+   <%if(success && success.length){%>
+    <div class="alert alert-success alert-dismissible fade show col-8 offset-2 " role="alert">
+  <%=success%>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<%}%>
+    <div class="exhibition-header">
+        <h1>Exhibition Highlights</h1>
+        <p>A deep dive into the stories and tools shaping our 7th Foundation Day.</p>
+        <div class="row">
+    <div class="col-8 offset-2">
+    <form method="POST", action="/feedback" class="needs-validation " novalidate>
+       
+      <label for="feedback", class="form-label feedback-LABEL">Please share your valuable Feedback</label><br>
+       <textarea  id="password", type="password", class="form-control", placeholder="Feedback" name="feedback[feedback]" required></textarea>
+      <div class="invalid-feedback">
+       Please share feedback
+      </div>
+      <br>
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+      
+    </form>
+    </div>
+  </div>
+</div>
+
+    <main class="detailed-container">
+        
+        <div class="stall">
+            <div class="stall_card-image">
+                <img src="pictures/Compost.jpg" alt="FFj History">
+            </div>
+            <div class="card-text stall_desc">
+                <span class="category">Stall 1</span>
+                <h2>Wonders of Nature</h2>
+                <p>Healthy soil is the foundation of our campus greenery. We utilize five key organic fertilizers to nourish our plants:
+                    <ul>
+                        <li><b>Vermicompost</b> for essential micro-nutrients, </li>
+                        <li><b> Kitchen Waste Compost</b> to recycle household scraps into soil conditioner,</li>
+                        <li><b> Banana Peel Fertilizer</b> to provide a potassium boost for fruiting,</li>
+                        <li><b> Cow Dung Manure</b> to improve soil structure and microbial activity</li>
+                        <li><b>Dry Leaf Manure</b> to retain moisture and cool roots during the Jaipur heat</li>
+                    </ul>  Together, these natural inputs ensure a sustainable, chemical-free ecosystem for the JECRC campus.</p>
+            </div>
+        </div>
+
+        <div class="stall">
+            <div class="stall_card-image">
+                <img src="pictures/Tray Garden3.jpeg" alt="Professional Digging Tool">
+            </div>
+            <div class="card-text stall_desc">
+                <span class="category">Stall 2</span>
+                <h2>Tiny Garden</h2>
+                <p>Beyond the campus fields, we celebrate the art of miniature ecosystems through our <b>Terrarium and Indoor Garden showcase</b>.A terrarium is a self-sustaining glass environment that acts like a tiny greenhouse, recycling moisture through its own water cycle. These 'gardens under glass' are perfect for urban spaces, requiring minimal care while purifying indoor air. <b>By combining hardy succulents, moss, and decorative stones, we demonstrate how anyone can bring a piece of nature into their home or hostel room, regardless of space.</b></p>
+            </div>
+        </div>
+
+        <div class="stall">
+            <div class="stall_card-image">
+                <img src="pictures/Hydroponics.jpg" alt="Future Vision">
+            </div>
+            <div class="card-text stall_desc">
+                <span class="category"> Project</span>
+                <h2>Hydroponics</h2>
+                <p>Our flagship <b>Hydroponics Project</b> represents a leap toward sustainable urban agriculture by growing plants entirely without soil. Using a nutrient-rich water solution, this system delivers minerals directly to the roots, resulting in up to 50% faster growth and 90% less water usage compared to traditional methods. <b>By controlling the environment, we demonstrate how fresh greens can be cultivated in limited campus spaces, proving that technology and nature can work together to solve food security and water scarcity challenges.</b></p>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

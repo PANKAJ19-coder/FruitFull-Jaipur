@@ -1,0 +1,602 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f1;
+    overflow-x: hidden;/* Prevents any side-scrolling */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+.container{
+    flex:1;
+}
+
+/* NAVBAR ADJUSTMENTS */
+.navbar {
+    min-height: 4.5rem;
+    margin-bottom: 0.5rem; /* Reduced for mobile flow */
+    background: rgba(240, 244, 241, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(27, 67, 50, 0.1);
+}
+
+.navbar .nav-item a{
+    color:#1b4332 !important;
+    font-size:1.2rem;
+    font-weight: 500;
+}
+.navbar-brand img {
+    object-fit: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: #f0f4f1;
+}
+
+
+/* MAIN-IMG */
+.main-img {
+    width: 100%;
+    min-height: 32rem; /* Use min-height so it can grow if content needs space */
+    display: flex;
+    flex-wrap: wrap;   /* Allows items to move to next line */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #1b4332;
+    font-weight: bolder;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.main-img1 {
+    padding: 1rem;
+    text-align: center; /* Better for mobile stacking */
+    flex: 1 1 300px;    /* Grow, shrink, and basis width */
+    max-width: 600px;
+}
+
+.main-img2 {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 400px;
+}
+
+
+.main-img2 img {
+    width: 100%;       /* Image fills its container */
+    max-width: 500px;  /* But doesn't get too huge on desktop */
+    height: auto;      /* Keeps ratio perfect */
+    border-radius: 1rem;
+    object-fit: cover;
+    
+}
+/* POP*/
+.pop{
+    position:absolute;
+    top:0rem;
+    left:50%;
+    transform: translateX(-50%);
+    background-color:#1b4332;
+    padding: 0.1rem;
+    border-radius:0.7rem;
+    color: #f0f4f1;
+    max-width: 12rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(27, 67, 50, 0.2);
+    border: 1 px solid rgba(255, 255, 255, 0.1);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+} 
+
+
+/* INTRO */
+
+.intro{
+    min-height:25rem;
+}
+.intro-in{
+    margin:20px 10px;
+    display:flex;
+    flex-wrap:wrap;
+    color:#1b4332;
+    border:1px solid rgba(116, 198, 157, 0.4);
+    border-radius:1rem;
+    padding:1rem;
+
+}
+.intro-1{
+   display: flex;
+   padding:1rem;
+   justify-content: center;
+}
+.intro-1 img{
+    width:100%;
+    max-width:25rem;
+    height:auto;
+    border-radius:1rem;
+    object-fit:cover;
+}
+.intro-2{
+    flex:1 1 30rem;
+    max-width:45rem;
+    padding:1rem;
+}
+
+/* FOOTER*/
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b4332;
+    color: #f0f4f1;
+    padding: 1rem 2rem 1rem 2rem;
+    width:100%;
+    height: auto;
+}
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+.footer-top .social{
+    transform: translateX(-2.5rem);
+    font-size: 1.2rem;
+}
+.footer-top .social i:hover{
+    transform: scale(1.2);
+}
+footer .social a{
+    color: #f0f4f1;
+}
+.footer-top a{
+    color:#f0f4f1;
+}
+
+.footer-btm p{
+    opacity:0.7;
+}
+/* Work */
+
+.work{
+    margin:2rem ;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #DDE5Ed;
+    border-radius: 1rem;
+    padding:1rem 1rem 2rem 1rem ;
+}
+.work1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.work2{
+    display: flex;
+    justify-content: center;
+}
+
+.work img{
+    width:100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+/* impact*/
+.impact{
+    display: flex;
+    width: 100%;
+    height: auto;
+    
+    margin-bottom: 7rem;
+    padding: 1rem 2rem 1rem 2rem;
+}
+.impact-1, .impact-2, .impact-3{
+    flex:1 1 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/*Vertival Time line*/
+.timeline-section{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1b4332;
+    max-width:1200px;
+    margin-bottom: 5rem;
+    
+}
+.timeline-wrapper{
+    position:relative;
+    width: 100%;
+    
+}
+.stem{
+    position:absolute;
+    width: 0.4rem;
+    left:50%;
+    transform: translateX(-0.25rem);
+    top:0;
+    bottom:0;
+    background-color: #1b4332;
+    border-radius: 0.5rem;
+}
+.timeline-item{
+    position: relative;
+    width:50%;
+    padding:1rem 3rem;
+}
+.card{
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+    transform: translateY(-3px);
+}
+
+.right{
+    left:50%;
+}
+.timeline-item::after{
+    content:'';
+    background-color: orange;
+    border: 4px solid white;
+    border-radius: 50%;
+    position: absolute;
+    height:20px;
+    width: 20px;
+}
+.left::after{
+    right:-0.55rem;
+    top:1.5rem;
+}
+.right::after{
+    top:1.5rem;
+    left:-0.65rem;
+}
+/*Events*/
+
+.events{
+    max-width:1200px;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1b4332;
+}
+.events .disc{
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.cards{
+    background-color: #DDE5Ed;
+    border-radius: 0.5rem;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.event{
+    max-width: 23rem;
+    flex: 1 1 19rem;
+    margin:1rem;
+    
+}
+.card img{
+    object-fit: cover;
+}
+.upcoming{
+    text-align: center;
+    color: #1b4332;
+    margin-top: 1rem;
+}
+
+.list .card{
+    max-width:50rem;
+}
+/*plantation.ejs*/
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1b4332;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+.plants{
+    max-width:1200px;
+    overflow-x: hidden;
+}
+.list{
+    background-color: #DDE5Ed;
+    border-radius: 1rem;
+    padding:2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plant{
+    max-width: 21rem;
+    flex: 1 1 18rem;
+    margin:1rem 0.5rem;
+    text-align: center;
+}
+.plant .card-body{
+        padding:0.6rem 0.5rem;
+    }
+.plantation_card_btn{
+    margin-top:0.5rem;
+}
+
+
+/* detail.ejs*/
+.detail{
+    padding:3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info{
+    background-color: #DDE5Ed;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:1.5rem 2.5rem ;
+}
+.info img{
+    max-width: 18rem;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+/*about us*/
+.contact{
+    background-color: #DDE5Ed;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding:1rem 2rem;
+    color: black;
+    align-items: flex-start;
+      margin-bottom: 5rem;
+}
+.contact i{
+    margin-right:0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact_social i{
+   margin-right:1rem;
+    font-size: 1.3rem ;
+    color: black;
+}
+.contact_social i:hover{
+    transform: scale(1.2);
+}
+.passowrd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/**exhibition*/
+.exhibition-header{
+    text-align: center;
+    padding: 50px 20px 40px;
+    color:#1b4332;
+}
+.detailed-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 4rem;
+}
+.stall {
+    display: flex;
+    background: #fff;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.stall_card-image {
+    flex: 1;
+    min-width: 40%;
+}
+
+.stall_card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.category {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2e7d32;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+.stall_desc{
+    padding:0.5rem;
+}
+.stall_desc h2{
+    color: #1b4332;
+}
+.feedback-LABEL{
+    text-decoration: underline;
+}
+
+
+/* Media Query*/
+@media (max-width: 768px) {
+    .stall {
+        flex-direction: column;
+    }
+    
+    .stall_card-image {
+        height: 250px;
+    }
+    
+}
+@media(min-width:740px){
+    .read_more{
+        display: none;
+    }
+}
+@media(max-width:739px){
+    .desc{
+        display: none;
+    }
+}
+
+@media(max-width:1000px){
+    .plant{
+        max-width: 200px;
+        flex: 1 1 5rem;
+    }
+}
+
+@media(max-width:768px){
+    .stem{
+        left:31px;
+    }
+    .timeline-item{
+        width:100%;
+        padding-left:70px;
+        padding-right: 25px;
+
+    }
+    .left, .right{
+        left:0;
+    }
+    .timeline-item::after, .right:after{
+        left:21px;
+    }
+}
+@media (min-width: 991px) {
+    .main-img1 {
+        text-align: left; /* Keep text left-aligned on big screens */
+        padding-right: 5rem;
+    }
+    
+}
+
+@media(max-width:991px){
+    .cards{
+        flex-direction: column;
+        align-items: center;
+    }
+    .upcoming .list{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 500px) {
+     .pop{
+        font-size: medium;
+    }
+    .main-img {
+        padding: 1rem;
+        height: auto; /* Absolute safety: let the div be as tall as the content */
+    }
+    
+    .main-img1 h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main-img1 h3 {
+        font-size: 1.2rem;
+    }
+    .main-img1{
+        margin-top: 2rem;
+    }
+    .pop{
+        padding-left:0.5rem;
+        padding-right: 0.5rem;
+        text-align: center;
+    }
+    .footer-top{
+        flex-direction: column;
+        align-items: center;
+        gap:7px;
+    }
+    .footer-top .social{
+        transform: translateX(0.1rem);
+    }
+    .impact{
+        flex-direction: column;
+        gap:5px;
+        margin-bottom: 3rem;
+    }
+    .impact-1, .impact-2, .impact-3{
+        flex:1 0 100px;
+    }
+    .detail{
+        padding: 1.5rem 1.5rem;
+    }
+    .info img{
+        max-width: 14rem;
+    }
+   
+   
+}
+@media (max-width:966px){
+    .plant{
+        margin:0.5rem 0.3rem;
+    }
+    .list{
+        padding:1.5rem 0.3rem;
+    }
+    .intro-2{
+        text-align: center;
+        padding:2rem;
+    }
+    .intro-in{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .intro-1 img{
+        max-width: 28rem;
+    }
+    .work1{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+ @media(max-width:450px){
+    .main-img .pop h5{
+        font-size:medium;
+    }
+}
+/* style of  updation applied*/
+.login-btn{
+    margin-left:auto;
+}
+.PlantCard-btn{
+    display: inline-block;
+}
+
+/**/
+   

@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate.ejs')-%>
+
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <form enctype="multipart/form-data" class="needs-validation" novalidate method="POST", action="/plant">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="Plant[name]" class="form-control" placeholder="Name" required>
+        <div class="invalid-feedback mb-3">
+       Please enter Name
+      </div>
+        <label for="desc" class="form-label">Description</label>
+        <textarea id="desc" name="Plant[desc]" class="form-control" placeholder="Description" required></textarea>
+        <div class="invalid-feedback mb-3">
+       Please enter Description
+      </div>
+        <label for="image" class="form-label">Upload Plant Image</label>
+        <input id="image" name="Plant[image]" class="form-control mb-3" type="file" required>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+    </div>
+    </div>
+</body>

@@ -1,0 +1,24 @@
+<% layout('layouts/boilerplate.ejs')-%>
+<body>
+  <%- include("../pages/flash.ejs")%>
+  <div class="row">
+    <div class="col-8 offset-2">
+    <form method="POST", action="/user/login" class="needs-validation" novalidate>
+      <label for="username", class="form-label"> Username</label><br>
+      <input id="username", type="text", class="form-control", placeholder="Username" name="username" required>
+      <div class="invalid-feedback">
+       Please enter Username
+      </div>
+      <label for="password", class="form-label"> Password</label><br>
+      <input id="password", type="password", class="form-control", placeholder="Password" name="password" required>
+      <div class="invalid-feedback">
+       Please enter Password
+      </div>
+      <br>
+    
+      <button type="submit" class="btn btn-primary">Login</button>
+      
+    </form>
+    </div>
+  </div>
+</body>

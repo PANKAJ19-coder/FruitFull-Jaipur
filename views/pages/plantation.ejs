@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate.ejs')-%>
+<body>
+  <%- include("../pages/flash.ejs")%>
+  <div class="page">
+    
+  <h3>Our Roots at JECRC</h3>
+  <p>At Fruitful Jaipur, we believe every sapling tells a story of change. This page showcases the variety of flora we have successfully planted across our college grounds .Our campus is now home to a wide range of botanical life. Take a look at the green legacy we are building together.</p>
+<div class="plants">
+  <div class="list">
+    <div class="row">
+        
+          <%for(let Plant of Plants){%>
+            <div class="col-6 col-sm-4 col-md-3">
+              <div class="card plant">
+                
+  <img src="<%=Plant.image.url%>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%=Plant.name%></h5>
+    <p class="card-text desc"><%= Plant.desc%></p>
+    <div class="row">
+      <div class="col">
+     <a href="/plant/<%= Plant._id%>" class="btn btn-primary btn-sm  plantation_card_btn read_more">Read more</a>
+     <div class="col">
+     <% if(currUser){%>
+     <a href="/plant/<%= Plant._id%>/edit" class="btn btn-primary btn-sm plantation_card_btn">Edit</a>&nbsp;&nbsp;
+     <form method='POST', class='PlantCard-btn', action="/plant/<%=Plant._id %>/delete?_method=DELETE">
+      <button class="btn btn-primary btn-sm plantation_card_btn" type="submit">Delete</button>
+     </form>
+     <% }%></div>
+     </div>
+     </div>
+  </div>
+</div>
+</div>
+          <%}%>
+          
+    </div>
+  </div> 
+</div>
+
+  <%if(currUser) {%>
+  <a href="/plant/new" class="btn btn-primary mt-3">Add Plants</a></div>
+  <% }%>
+</div>
+</body>

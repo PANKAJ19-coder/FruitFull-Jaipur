@@ -1,0 +1,22 @@
+<% layout("layouts/boilerplate.ejs")%>
+
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <form  class="needs-validation" novalidate method="POST", action="/events/new">
+        <label for="title" class="form-label">Name</label>
+        <input id="title" name="event[title]" class="form-control" placeholder="Name of Event" required>
+       <div class="invalid-feedback mb-3">
+        Please enter name of event
+      </div>
+        <label for="detail" class="form-label">Details</label>
+        <textarea id="detail" name="event[detail]" class="form-control"  required></textarea>
+        <div class="invalid-feedback mb-3">
+       Please enter Details
+      </div>
+       <br>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+    </div>
+    </div>
+</body>
